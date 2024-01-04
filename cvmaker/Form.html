@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgb(32, 71, 96);
+}
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(32, 71, 96);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #707070;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%   ;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(32, 71, 96);
+}
+.form button:hover {
+  background: rgb(32, 71, 96);
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+
+
+
+    </style>
+    
+    
+    <title>Form</title>
+</head>
+<body>
+    <section class="container">
+        <header>CV FORMU</header>
+        <form action="Form.php" class="form" method="post">
+          <div class="input-box">
+            <label><i class="fa fa-user" ></i> &nbsp; İsim-Soyisim</label>
+            <input type="text" placeholder="örn : Fahri Can KÜMET" name="name" required />
+          </div>
+          <div class="input-box">
+            <label><i class="fa fa-envelope"></i> &nbsp;  Email</label>
+            <input type="email" placeholder="@gmail.com" name="email" required />
+          </div>
+          <div class="column">
+            <div class="input-box">
+              <label><i class="fa fa-phone" ></i> &nbsp;  Telefon Numarası</label>
+              <input type="number" placeholder="0530-123-4567" name="phone" required />
+            </div>
+            <div class="input-box">
+              <label><i class="fa fa-calendar" ></i> &nbsp;   Doğum Tarihi</label>
+              <input type="date" placeholder="Doğum Tarihi" name="dob" required />
+            </div>
+          </div>
+          <div class="input-box">
+            <label><i class="fa fa-graduation-cap"> </i> &nbsp;  Üniversite</label>
+            <input type="text" placeholder="örn : İstanbul Üniversitesi" name="university" required />
+          </div>
+          <div class="input-box">
+            <label><i class="fa fa-briefcase" ></i> &nbsp;  Meslek</label>
+            <input type="text" placeholder="Mesleğinizi Giriniz " name="profession" required />
+          </div>
+          <div class="input-box">
+            <label><i class="fa-brands fa-black-tie"></i> &nbsp;  Deneyimler</label>
+            <input type="text" placeholder="Deneyimlerinizi Giriniz " name="experiences" required />
+          </div>
+          
+
+          <div class="input-box">
+            <label><i class="fa-solid fa-language"></i> &nbsp;   Diller</label>
+            <div class="column">
+              <input type="text" placeholder="örn : Türkçe" name="language1" required />
+                 <div class="select-box">
+                  <select name ="level1">
+                    <option hidden>Seviye</option>
+                    <option>A1</option>
+                    <option>A2</option>
+                    <option>B1</option>
+                    <option>B2</option>
+                    <option>C1</option>
+                    <option>C2</option>
+                  </select>
+                </div>
+              </div>
+              <div class="column">
+                <input type="text" placeholder="örn : İngilizce" name="language2" />
+                   <div class="select-box">
+                    <select name="level2">
+                      <option hidden>Seviye</option>
+                      <option>A1</option>
+                      <option>A2</option>
+                      <option>B1</option>
+                      <option>B2</option>
+                      <option>C1</option>
+                      <option>C2</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="column">
+                    <input type="text" placeholder="örn : Fransızca" name="language3" />
+                       <div class="select-box">
+                        <select name="level3">
+                          <option hidden>Seviye</option>
+                          <option>A1</option>
+                          <option>A2</option>
+                          <option>B1</option>
+                          <option>B2</option>
+                          <option>C1</option>
+                          <option>C2</option>
+                        </select>
+                      </div>
+                    </div>
+
+             
+
+
+                    <div class="gender-box">
+                      <h3><i class="fa-solid fa-venus-mars"></i> &nbsp; Cinsiyet</h3>
+                      <div class="gender-option">
+                        <div class="gender">
+                          <input type="radio" id="check-male" name="gender" value="Erkek" checked />
+                          <label for="check-male">Erkek</label>
+                        </div>
+                        <div class="gender">
+                          <input type="radio" id="check-female" name="gender" value="Kadın" />
+                          <label for="check-female">Kadın</label>
+                        </div>
+                        <div class="gender">
+                          <input type="radio" id="check-other" name="gender" value="Diğer" />
+                          <label for="check-other">Söylememeyi tercih ediyorum</label>
+                        </div>
+                      </div>
+                    </div>
+          <div class="input-box address">
+            <label><i class="fa-sharp fa-solid fa-location-dot"></i> &nbsp; Adres</label>
+            <input type="text" placeholder="Adresi gir" name="adress" required />
+            <input type="text" placeholder="2.Adres Satırı" name="adress2"  />
+            <div class="column">
+              <div class="select-box">
+                <select name="country">
+                  <option hidden>Ülke</option>
+                  <option>Türkiye</option>
+                  <option>Japonya</option>
+                  <option>Amerika</option>
+                  <option>İngiltere</option>
+                  <option>İspanya</option>
+                </select>
+              </div>
+              <input type="text" placeholder="örn : İstanbul" name="city" required />
+            </div>
+            <div class="column">
+              <input type="text" placeholder="örn : Arnavutköy " name="district" required />
+              <input type="number" placeholder="Posta Kodunu Giriniz" name="postalcode" required />
+            </div>
+            <div class="input-box">
+                <label><i class="fa fa-music"></i>  &nbsp; İlgi Alanları</label>
+                <input type="text" placeholder="örn : Doğa Yürüyüşü" name="interests" required />
+              </div>
+              <div class="input-box">
+                <label><i class="fa-sharp fa-solid fa-computer-mouse"></i> &nbsp;   Beceriler</label>
+                <div class="column">
+                  <input type="text" placeholder="örn : Microsoft Word" name="skill1" required />
+                     <div class="select-box">
+                      <select name="skillLevel1">
+                        <option hidden>Seviye</option>
+                        <option>Uzman</option>
+                        <option>Deneyimli</option>
+                        <option>Yetenekli</option>
+                        <option>Başlangıç</option>
+                        <option>Acemi</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="column">
+                    <input type="text" placeholder="örn : Microsoft Word (Zorunlu Değil)" name="skill2" />
+                       <div class="select-box">
+                        <select name="skillLevel2">
+                          <option hidden>Seviye</option>
+                          <option>Uzman</option>
+                          <option>Deneyimli</option>
+                          <option>Yetenekli</option>
+                          <option>Başlangıç</option>
+                          <option>Acemi</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="column">
+                        <input type="text" placeholder="örn : Microsoft Word (Zorunlu Değil)" name="skill3" />
+                           <div class="select-box">
+                            <select name="skillLevel3">
+                              <option hidden>Seviye</option>
+                              <option>Uzman</option>
+                              <option>Deneyimli</option>
+                              <option>Yetenekli</option>
+                              <option>Başlangıç</option>
+                              <option>Acemi</option>
+                            </select>
+                          </div>
+                        </div>
+                   
+                   
+                    <div class="input-box">
+                        <label><i class="fa-brands fa-github"></i> &nbsp; Git-Hub Profiliniz</label>
+                        <input type="text" name="githubProfile" required />
+                      </div>
+                      <div class="input-box">
+                        <label><i class="fa-brands fa-linkedin"></i> &nbsp; Linkedin Profiliniz</label>
+                        <input type="text" name="linkedinProfile" required />
+                      </div>
+
+                      <div class="input-box">
+                        <label><i class="fa-solid fa-comment"></i>   &nbsp; Referanslar</label>
+                        <input type="text" placeholder="Şirket Adı : " name="companyName"  />
+                        <input type="text" placeholder="İletişim Kişisi : " name="contactPerson" />
+                        <input type="number" placeholder="Telefon Numarası : " name="referencePhone" />
+                        <input type="email" placeholder="E Posta Adresi : " name="referenceEmail" />
+                      </div>
+                      
+        
+
+
+          </div>
+          <button><a href=Form.php >r</button>
+        </form>
+
+      </section>
+</body>
+</html>
